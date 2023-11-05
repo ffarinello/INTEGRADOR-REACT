@@ -1,11 +1,14 @@
-import './App.css'
+import Header from "./components/Header";
+import CharacterSelector from "./components/CharacterSelector";
+import "./App.css";
 
 function App() {
-    return(
-    <>
-        <h1>Creando proyecto</h1>
-    </>
-    )
+    return (
+        <>
+            <Header />
+            <CharacterSelector />
+        </>
+    );
 }
 
-export default App
+export default App;
