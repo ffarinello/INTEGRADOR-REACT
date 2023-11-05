@@ -12,7 +12,6 @@ const CharacterSelector = () => {
             return [];
         }
         return JSON.parse(localStorage.getItem("peleas"));
-
     });
 
     const [character, setCharacter] = useState([]);
@@ -38,6 +37,7 @@ const CharacterSelector = () => {
 
     const guardar = () => {
         setPeleas([...peleas, { personaje, rival, victoria }]);
+        window.location.replace("/historial");
     };
 
     useEffect(() => {
@@ -46,6 +46,7 @@ const CharacterSelector = () => {
 
     return (
         <>
+            <h1>Simulador de Batalla</h1>
             {personaje && (
                 <section>
                     <div id="charName">
@@ -108,7 +109,7 @@ const CharacterSelector = () => {
 
                     {victoria && (
                         <>
-                            <p>La victoria es de {victoria}</p>
+                            <p>El ganador es {victoria}</p>
 
                             <button type="button" onClick={guardar}>
                                 Guardar
@@ -122,4 +123,3 @@ const CharacterSelector = () => {
 };
 
 export default CharacterSelector;
-
