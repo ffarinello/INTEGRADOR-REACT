@@ -1,16 +1,21 @@
+import { useState } from "react";
 import "../historial.css";
 
 const Historial = () => {
-    const peleas = JSON.parse(localStorage.getItem("peleas")) || [];
+    const [peleas, setPeleas] = useState(() => {
+        const storedPeleas = JSON.parse(localStorage.getItem("peleas"));
+        return storedPeleas || [];
+    });
 
     function volver() {
         window.location.replace("/");
     }
 
     function eliminar() {
-
+        localStorage.removeItem("peleas");
+        setPeleas([]);
     }
-    
+
     return (
         <main>
             <button type="button" id="volver" onClick={volver}>

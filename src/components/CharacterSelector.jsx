@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import vs from "../img/vs-show.png";
+import "/src/App.css";
 
 const CharacterSelector = () => {
     const [personaje, setPersonaje] = useState(null);
@@ -124,21 +125,21 @@ const CharacterSelector = () => {
 
             <section>
                 {personaje && rival && (
-                    <>
+                    <footer>
                         <button type="button" onClick={pelear}>
                             Pelear
                         </button>
 
                         {victoria && (
                             <>
-                                <p>El ganador es {victoria}</p>
+                                <span>El ganador es {victoria}</span>
 
                                 <button type="button" onClick={guardar}>
                                     Guardar
                                 </button>
                             </>
                         )}
-                    </>
+                    </footer>
                 )}
             </section>
         </main>
