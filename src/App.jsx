@@ -1,7 +1,6 @@
 import CharacterSelector from "./components/CharacterSelector";
 import Historial from "./components/Historial";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import "./App.css";
 
 function App() {
     return (
