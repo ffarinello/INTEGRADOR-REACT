@@ -52,17 +52,17 @@ const CharacterSelector = () => {
             </header>
             <section className="fighterz">
                 <article className="fighterz character-card">
-                        <select name="char" id="char" onChange={({ target }) => setPersonaje(character.find(({ id }) => id == target.value))}>
-                            <option selected disabled>
-                                Seleccionar personaje:
-                            </option>
+                    <select name="char" id="char" onChange={({ target }) => setPersonaje(character.find(({ id }) => id == target.value))}>
+                        <option selected disabled>
+                            Seleccionar personaje:
+                        </option>
 
-                            {character.map((char) => (
-                                <option key={char.id} value={char.id}>
-                                    {char.name}
-                                </option>
-                            ))}
-                        </select>
+                        {character.map((char) => (
+                            <option key={char.id} value={char.id}>
+                                {char.name}
+                            </option>
+                        ))}
+                    </select>
 
                     <section>
                         {personaje && (
@@ -89,17 +89,17 @@ const CharacterSelector = () => {
                 </div>
 
                 <article className="fighterz rival-Card">
-                        <select name="char" id="char" onChange={({ target }) => setRival(character.find(({ id }) => id == target.value))}>
-                            <option selected disabled>
-                                Seleccionar personaje:
-                            </option>
+                    <select name="char" id="char" onChange={({ target }) => setRival(character.find(({ id }) => id == target.value))}>
+                        <option selected disabled>
+                            Seleccionar personaje:
+                        </option>
 
-                            {character.map((char) => (
-                                <option key={char.id} value={char.id}>
-                                    {char.name}
-                                </option>
-                            ))}
-                        </select>
+                        {character.map((char) => (
+                            <option key={char.id} value={char.id}>
+                                {char.name}
+                            </option>
+                        ))}
+                    </select>
 
                     <section>
                         {rival && (

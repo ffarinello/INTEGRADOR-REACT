@@ -20,17 +20,18 @@ main {
 .fighterz {
     display: flex;
     justify-content: center;
-
-    & article {
-        display: grid;
-        justify-items: center;
-    }
+    align-items: center;
+    min-height: 60vh;
+    
     & .character-card,
     .rival-Card {
+        display: grid;
+        justify-items: center;
         width: 250px;
         padding: 30px;
         border: 0.25px solid rgba(240, 131, 47, 0.3);
         border-radius: 10px;
+
         & div {
             display: flex;
             justify-content: space-between;
@@ -38,25 +39,18 @@ main {
         }
     }
 
-    #importImage {
-        display: flex;
-        align-items: center;
-    }
-
-    & ul{
+    & ul {
+        display: grid;
+        justify-items: center;
         list-style: none;
-        
+        gap: 30px;
+    
         & .stats {
             text-transform: uppercase;
-            display: flex;
             gap: 30px;
         }
         & img {
-            max-height: 350px;
-            max-width: 250px;
-        }
-        & li {
-            display: grid;
+            height: 300px;
         }
     }
 }
