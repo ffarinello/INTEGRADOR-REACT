@@ -1,8 +1,41 @@
-# React + Vite
+# Simulador de pelea DBZ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Proyecto Integrador React. 
 
-Currently, two official plugins are available:
+#### Trabajo final de curso "Desarrollador Web Frontend" por parte de la Universidad de Tres de Febrero ([UNTREF](https://untref.edu.ar/)).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+## Proyecto en pantalla
+![imagenProyectoSimulador](image-1.png)
+
+Simulador de pelea con personajes de DBZ utilizando una  [API](https://back-dragon-ballzs-mwfw-dev.fl0.io/api).
+
+Contiene un historial para visualizar las peleas previas.
+
+## Tecnologías Utilizadas
+
+- HTML
+- CSS
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [Vite](https://vitejs.dev/)
+- [Node.js](https://nodejs.org/en)
+
+## Cómo Ejecutar la Aplicación
+1. Clona este repositorio.
+```bash
+git clone https://github.com/ffarinello/PROYECTO3-FARINELLO-NICOLAS.git
+```
+2. Ejecuta el siguiente comando en la terminal para instalar las dependencias:
+```bash
+npm install
+```
+3. Inicia la aplicación con el siguiente comando:
+
+```bash
+npm start
+```
+#
+
+Gracias [Fabio](https://github.com/FabioDrizZt) por la paciencia.
