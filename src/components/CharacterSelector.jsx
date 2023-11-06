@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import vs from "../img/vs-show.png";
 
 const CharacterSelector = () => {
     const [personaje, setPersonaje] = useState(null);
@@ -45,80 +46,102 @@ const CharacterSelector = () => {
     }, [peleas]);
 
     return (
-        <>
-            <h1>Simulador de Batalla</h1>
-            {personaje && (
-                <section>
-                    <div id="charName">
-                        <h2>{personaje.name}</h2>
-                        <h2>Race: {personaje.race}</h2>
-                    </div>
-                    <ul className="card">
-                        <img src={personaje.img} alt={personaje.name} />
-                        <li>Health: {personaje.health}</li>
-                        <li>Attack: {personaje.attack}</li>
-                        <li>Defense: {personaje.defense}</li>
-                    </ul>
-                </section>
-            )}
+        <main>
+            <header>
+                <h1>Simulador de Batalla</h1>
+            </header>
+            <section className="fighterz">
+                <article className="fighterz character-card">
+                        <select name="char" id="char" onChange={({ target }) => setPersonaje(character.find(({ id }) => id == target.value))}>
+                            <option selected disabled>
+                                Seleccionar personaje:
+                            </option>
 
-            <select name="char" id="char" onChange={({ target }) => setPersonaje(character.find(({ id }) => id == target.value))}>
-                <option selected disabled>
-                    Seleccionar personaje:
-                </option>
+                            {character.map((char) => (
+                                <option key={char.id} value={char.id}>
+                                    {char.name}
+                                </option>
+                            ))}
+                        </select>
 
-                {character.map((char) => (
-                    <option key={char.id} value={char.id}>
-                        {char.name}
-                    </option>
-                ))}
-            </select>
+                    <section>
+                        {personaje && (
+                            <>
+                                <div>
+                                    <h2>{personaje.name}</h2>
+                                    <h5>Race: {personaje.race}</h5>
+                                </div>
+                                <ul>
+                                    <img src={personaje.img} alt={personaje.name} />
+                                    <div className="stats">
+                                        <li>Health {parseInt(personaje.health)}</li>
+                                        <li>Attack {parseInt(personaje.attack)}</li>
+                                        <li>Defense {parseInt(personaje.defense)}</li>
+                                    </div>
+                                </ul>
+                            </>
+                        )}
+                    </section>
+                </article>
 
-            {rival && (
-                <section>
-                    <div id="charName">
-                        <h2>{rival.name}</h2>
-                        <h2>Race: {rival.race}</h2>
-                    </div>
-                    <ul className="card">
-                        <img src={rival.img} alt={rival.name} />
-                        <li>Health: {rival.health}</li>
-                        <li>Attack: {rival.attack}</li>
-                        <li>Defense: {rival.defense}</li>
-                    </ul>
-                </section>
-            )}
+                <div id="importImage">
+                    <img src={vs} alt="vs" />
+                </div>
 
-            <select name="char" id="char" onChange={({ target }) => setRival(character.find(({ id }) => id == target.value))}>
-                <option selected disabled>
-                    Seleccionar personaje:
-                </option>
+                <article className="fighterz rival-Card">
+                        <select name="char" id="char" onChange={({ target }) => setRival(character.find(({ id }) => id == target.value))}>
+                            <option selected disabled>
+                                Seleccionar personaje:
+                            </option>
 
-                {character.map((char) => (
-                    <option key={char.id} value={char.id}>
-                        {char.name}
-                    </option>
-                ))}
-            </select>
+                            {character.map((char) => (
+                                <option key={char.id} value={char.id}>
+                                    {char.name}
+                                </option>
+                            ))}
+                        </select>
 
-            {personaje && rival && (
-                <>
-                    <button type="button" onClick={pelear}>
-                        Pelear
-                    </button>
+                    <section>
+                        {rival && (
+                            <>
+                                <div>
+                                    <h2>{rival.name}</h2>
+                                    <h5>Race: {rival.race}</h5>
+                                </div>
+                                <ul>
+                                    <img src={rival.img} alt={rival.name} />
+                                    <div className="stats">
+                                        <li>Health {parseInt(rival.health)}</li>
+                                        <li>Attack {parseInt(rival.attack)}</li>
+                                        <li>Defense {parseInt(rival.defense)}</li>
+                                    </div>
+                                </ul>
+                            </>
+                        )}
+                    </section>
+                </article>
+            </section>
 
-                    {victoria && (
-                        <>
-                            <p>El ganador es {victoria}</p>
+            <section>
+                {personaje && rival && (
+                    <>
+                        <button type="button" onClick={pelear}>
+                            Pelear
+                        </button>
 
-                            <button type="button" onClick={guardar}>
-                                Guardar
-                            </button>
-                        </>
-                    )}
-                </>
-            )}
-        </>
+                        {victoria && (
+                            <>
+                                <p>El ganador es {victoria}</p>
+
+                                <button type="button" onClick={guardar}>
+                                    Guardar
+                                </button>
+                            </>
+                        )}
+                    </>
+                )}
+            </section>
+        </main>
     );
 };
 

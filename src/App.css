@@ -1,1 +1,78 @@
-/* estilos */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    height: 100vh;
+
+    & header {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.fighterz {
+    display: flex;
+    justify-content: center;
+
+    & article {
+        display: grid;
+        justify-items: center;
+    }
+    & .character-card,
+    .rival-Card {
+        width: 250px;
+        padding: 30px;
+        border: 0.25px solid rgba(240, 131, 47, 0.3);
+        border-radius: 10px;
+        & div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    #importImage {
+        display: flex;
+        align-items: center;
+    }
+
+    & ul{
+        list-style: none;
+        
+        & .stats {
+            text-transform: uppercase;
+            display: flex;
+            gap: 30px;
+        }
+        & img {
+            max-height: 350px;
+            max-width: 250px;
+        }
+        & li {
+            display: grid;
+        }
+    }
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+
+    &:hover {
+        border-color: orange;
+    }
+}
