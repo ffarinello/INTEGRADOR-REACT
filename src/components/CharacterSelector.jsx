@@ -18,9 +18,9 @@ const CharacterSelector = () => {
 
     const [character, setCharacter] = useState([]);
     useEffect(() => {
-        axios("https://back-dragon-ballzs-mwfw-dev.fl0.io/api")
+        axios("src/data/data.json")
             .then((res) => {
-                setCharacter(res.data.characters);
+                setCharacter(res.data);
             })
             .catch((error) => {
                 console.error("Error al cargar los datos de propiedades", error);
